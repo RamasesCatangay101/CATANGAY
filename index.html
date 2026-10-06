@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Beautiful Spots in the Philippines</title>
-
   <style>
     :root {
       --lavender: #9381c9;
@@ -21,32 +19,16 @@
       --text-mid: #6b6b7a;
       --text-light: #9a9aaa;
     }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
     body {
       font-family: Arial, Helvetica, sans-serif;
       line-height: 1.6;
       color: var(--text-dark);
-      background: linear-gradient(
-        135deg,
-        #f0f4f5 0%,
-        #f8f6fc 50%,
-        #f5f0eb 100%
-      );
+      background: linear-gradient(135deg, #f0f4f5 0%, #f8f6fc 50%, #f5f0eb 100%);
       min-height: 100vh;
       position: relative;
     }
-
-    /* Corner Cat Sticker */
     .corner-sticker {
       position: fixed;
       bottom: 20px;
@@ -56,19 +38,11 @@
       object-fit: contain;
       z-index: 9999;
       pointer-events: none;
-      filter: drop-shadow(0 4px 6px rgba(0, 0, 0, 0.15));
+      filter: drop-shadow(0 4px 6px rgba(0,0,0,0.15));
     }
-
-    /* Header */
     header {
-      background:
-        linear-gradient(
-          rgba(40, 50, 70, 0.45),
-          rgba(50, 70, 70, 0.45)
-        ),
-        url('https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2023/12/18093629/philippines-wanderlust_0_feature-1600x900.jpeg')
-        no-repeat center center;
-
+      background: linear-gradient(rgba(40, 50, 70, 0.45), rgba(50, 70, 70, 0.45)), 
+                  url('https://images.travelandleisureasia.com/wp-content/uploads/sites/5/2023/12/18093629/philippines-wanderlust_0_feature-1600x900.jpeg') no-repeat center center;
       background-size: cover;
       color: white;
       text-align: center;
@@ -76,7 +50,6 @@
       position: relative;
       overflow: hidden;
     }
-
     header::after {
       content: '';
       position: absolute;
@@ -84,31 +57,22 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(
-        90deg,
-        var(--teal-light),
-        var(--blue-pale),
-        var(--lavender-light)
-      );
+      background: linear-gradient(90deg, var(--teal-light), var(--blue-pale), var(--lavender-light));
     }
-
     header h1 {
       font-size: 2.8rem;
       margin-bottom: 10px;
-      text-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 2px 6px rgba(0,0,0,0.4);
       position: relative;
       z-index: 1;
     }
-
     header p {
       font-size: 1.1rem;
       opacity: 0.95;
-      text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+      text-shadow: 0 1px 4px rgba(0,0,0,0.4);
       position: relative;
       z-index: 1;
     }
-
-    /* Navigation */
     nav {
       background: linear-gradient(90deg, #5a9a9a, #78b8b8);
       padding: 14px;
@@ -117,7 +81,6 @@
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(80, 140, 140, 0.12);
     }
-
     nav ul {
       list-style: none;
       display: flex;
@@ -125,7 +88,6 @@
       flex-wrap: wrap;
       gap: 10px;
     }
-
     nav a {
       color: white;
       text-decoration: none;
@@ -133,20 +95,15 @@
       border-radius: 20px;
       transition: background 0.3s ease, transform 0.2s ease;
     }
-
     nav a:hover {
-      background: rgba(255, 255, 255, 0.25);
+      background: rgba(255,255,255,0.25);
       transform: translateY(-1px);
     }
-
-    /* Main Content */
     main {
       max-width: 1000px;
       margin: 40px auto;
       padding: 0 20px;
     }
-
-    /* Introduction */
     #intro {
       text-align: center;
       background-color: white;
@@ -157,7 +114,6 @@
       overflow: hidden;
       box-shadow: 0 4px 16px rgba(100, 140, 140, 0.07);
     }
-
     #intro::before {
       content: '';
       position: absolute;
@@ -165,20 +121,9 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(
-        90deg,
-        var(--lavender-light),
-        var(--teal-light),
-        var(--blue-pale)
-      );
+      background: linear-gradient(90deg, var(--lavender-light), var(--teal-light), var(--blue-pale));
     }
-
-    #intro h2 {
-      color: #6b78b0;
-      margin-bottom: 10px;
-    }
-
-    /* Articles */
+    #intro h2 { color: #6b78b0; margin-bottom: 10px; }
     article {
       background-color: white;
       margin-bottom: 30px;
@@ -188,65 +133,29 @@
       box-shadow: 0 4px 16px rgba(100, 140, 140, 0.07);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     article:hover {
       transform: translateY(-3px);
       box-shadow: 0 8px 24px rgba(107, 142, 175, 0.12);
     }
-
     article:nth-of-type(odd)::before {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
+      top: 0; bottom: 0; left: 0;
       width: 5px;
-      background: linear-gradient(
-        180deg,
-        var(--teal-light),
-        var(--teal-soft),
-        #4a8a8a
-      );
+      background: linear-gradient(180deg, var(--teal-light), var(--teal-soft), #4a8a8a);
     }
-
     article:nth-of-type(even)::before {
       content: '';
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
+      top: 0; bottom: 0; left: 0;
       width: 5px;
-      background: linear-gradient(
-        180deg,
-        var(--blue-pale),
-        var(--blue-calm),
-        #557899
-      );
+      background: linear-gradient(180deg, var(--blue-pale), var(--blue-calm), #557899);
     }
-
-    article h2 {
-      padding: 22px 25px 10px;
-      font-size: 1.8rem;
-    }
-
-    article:nth-of-type(odd) h2 {
-      color: var(--teal-soft);
-    }
-
-    article:nth-of-type(even) h2 {
-      color: var(--blue-calm);
-    }
-
-    article p {
-      padding: 15px 25px 25px;
-      color: var(--text-mid);
-    }
-
-    /* Images */
-    figure {
-      margin: 0;
-    }
-
+    article h2 { padding: 22px 25px 10px; font-size: 1.8rem; }
+    article:nth-of-type(odd) h2 { color: var(--teal-soft); }
+    article:nth-of-type(even) h2 { color: var(--blue-calm); }
+    article p { padding: 15px 25px 25px; color: var(--text-mid); }
+    figure { margin: 0; }
     figure img {
       width: 100%;
       height: auto;
@@ -256,56 +165,33 @@
       background-color: #f4f2fa;
       transition: transform 0.4s ease;
     }
-
-    article:hover img {
-      transform: scale(1.015);
-    }
-
+    article:hover img { transform: scale(1.015); }
     figcaption {
-      background: linear-gradient(
-        90deg,
-        #f4f2fa,
-        #f0f7f7,
-        #f5f0eb
-      );
+      background: linear-gradient(90deg, #f4f2fa, #f0f7f7, #f5f0eb);
       color: var(--text-mid);
       font-size: 0.9rem;
       padding: 14px 20px;
       text-align: center;
       position: relative;
     }
-
     figcaption::after {
       content: '';
       position: absolute;
-      bottom: 0;
-      left: 30%;
-      right: 30%;
+      bottom: 0; left: 30%; right: 30%;
       height: 3px;
-      background: linear-gradient(
-        90deg,
-        transparent,
-        var(--lavender-light),
-        var(--teal-light),
-        transparent
-      );
+      background: linear-gradient(90deg, transparent, var(--lavender-light), var(--teal-light), transparent);
       border-radius: 3px;
     }
-
-    /* Video Modal */
     .modal-overlay {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
       background: rgba(0, 0, 0, 0.8);
       display: flex;
       justify-content: center;
       align-items: center;
       z-index: 2000;
     }
-
     .modal-content {
       position: relative;
       background: #000;
@@ -313,49 +199,32 @@
       border-radius: 12px;
       max-width: 90%;
     }
-
     .modal-content video {
       width: 560px;
       height: 315px;
       max-width: 100%;
       border-radius: 8px;
       display: block;
-      background: #000;
     }
-
-    /* Close Button */
     .close-btn {
       position: absolute;
-      top: -15px;
-      right: -15px;
+      top: -15px; right: -15px;
       background: var(--teal-soft);
       color: white;
       border: none;
       border-radius: 50%;
-      width: 35px;
-      height: 35px;
+      width: 35px; height: 35px;
       font-size: 20px;
       cursor: pointer;
       font-weight: bold;
       display: flex;
       align-items: center;
       justify-content: center;
-      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
-      z-index: 5;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.3);
     }
-
-    .close-btn:hover {
-      background: var(--blue-calm);
-    }
-
-    /* Footer */
+    .close-btn:hover { background: var(--blue-calm); }
     footer {
-      background: linear-gradient(
-        135deg,
-        #6b8eaf 0%,
-        #68a8a8 60%,
-        #9381c9 100%
-      );
+      background: linear-gradient(135deg, #6b8eaf 0%, #68a8a8 60%, #9381c9 100%);
       color: white;
       text-align: center;
       padding: 30px 20px;
@@ -363,388 +232,107 @@
       position: relative;
       overflow: hidden;
     }
-
     footer::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 4px;
-      background: linear-gradient(
-        90deg,
-        var(--teal-light),
-        var(--blue-pale),
-        var(--lavender-light)
-      );
+      background: linear-gradient(90deg, var(--teal-light), var(--blue-pale), var(--lavender-light));
     }
-
-    footer p {
-      margin: 5px 0;
-      opacity: 0.9;
-    }
-
-    /* Mobile */
+    footer p { margin: 5px 0; opacity: 0.9; }
     @media (max-width: 600px) {
-
-      header {
-        padding: 50px 15px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      nav ul {
-        gap: 5px;
-      }
-
-      nav a {
-        font-size: 0.9rem;
-        padding: 6px 10px;
-      }
-
-      figure img {
-        height: 250px;
-      }
-
-      article h2 {
-        font-size: 1.5rem;
-      }
-
-      .modal-content {
-        padding: 15px;
-        width: 95%;
-      }
-
-      .modal-content video {
-        width: 100%;
-        height: 250px;
-      }
-
-      .close-btn {
-        top: -10px;
-        right: -10px;
-      }
+      header { padding: 50px 15px; }
+      header h1 { font-size: 2rem; }
+      nav ul { gap: 5px; }
+      nav a { font-size: 0.9rem; padding: 6px 10px; }
+      figure img { height: 250px; }
+      article h2 { font-size: 1.5rem; }
+      .modal-content video { width: 100vw; height: 250px; }
     }
   </style>
 </head>
-
 <body>
-
-  <!-- Promotional Video Modal -->
   <div id="videoModal" class="modal-overlay">
-
     <div class="modal-content">
-
-      <button
-        class="close-btn"
-        onclick="closeVideoModal()"
-        aria-label="Close video">
-        &times;
-      </button>
-
-      <video
-        id="promoVideo"
-        controls
-        autoplay
-        muted
-        playsinline
-        preload="auto">
-
-        <source
-          src="https://github.com/RamasesCatangay101/CATANGAY/blob/main/Images%20%26%20Vids/Promovid.mp4"
-          type="video/mp4">
-
+      <button class="close-btn" onclick="closeVideoModal()">&times;</button>
+      <video id="promoVideo" controls autoplay style="width: 560px; height: 315px; max-width: 100%; border-radius: 8px; display: block;">
+        <source src="https://raw.githubusercontent.com/RamasesCatangay101/CATANGAY/main/promovid.mp4" type="video/mp4">
         Your browser does not support the video tag.
-
       </video>
-
     </div>
   </div>
-
-
-  <!-- Corner Cat Sticker -->
-  <img
-    src="https://media.tenor.com/m3r_8NhxM9MAAAAM/cat-clapping-ai-cat-clapping.gif"
-    alt="Corner Sticker"
-    class="corner-sticker">
-
-
-  <!-- Header -->
+  <img src="https://media.tenor.com/m3r_8NhxM9MAAAAM/cat-clapping-ai-cat-clapping.gif" alt="Corner Sticker" class="corner-sticker">
   <header>
-
     <h1>Beautiful Spots in the Philippines</h1>
-
-    <p>
-      Discover five breathtaking destinations in the Philippines worth visiting.
-    </p>
-
+    <p>Discover five breathtaking destinations in the philippines worth visiting.</p>
   </header>
-
-
-  <!-- Navigation -->
   <nav>
-
     <ul>
-
-      <li>
-        <a href="#intro">Introduction</a>
-      </li>
-
-      <li>
-        <a href="#bucas-grande">Bucas Grande Island</a>
-      </li>
-
-      <li>
-        <a href="#underground-river">Underground River</a>
-      </li>
-
-      <li>
-        <a href="#baguio-cathedral">Baguio Cathedral</a>
-      </li>
-
-      <li>
-        <a href="#mayon">Mayon Volcano</a>
-      </li>
-
-      <li>
-        <a href="#siargao">Siargao</a>
-      </li>
-
+      <li><a href="#intro">Introduction</a></li>
+      <li><a href="#Bucas Grande Island">Bucas Grande Island</a></li>
+      <li><a href="#underground-river">Underground River</a></li>
+      <li><a href="#Baguio Cathedral">Baguio Cathedral</a></li>
+      <li><a href="#mayon">Mayon Volcano</a></li>
+      <li><a href="#siargao">Siargao</a></li>
     </ul>
-
   </nav>
-
-
-  <!-- Main Content -->
   <main>
-
-    <!-- Introduction -->
     <section id="intro">
-
       <h2>Explore the Philippines</h2>
-
-      <p>
-        The Philippines is home to some of the most stunning natural
-        wonders in Southeast Asia. From white sand beaches to
-        breathtaking mountains, here are five beautiful destinations
-        worth discovering.
-      </p>
-
+      <p>The Philippines is home to some of the most stunning natural wonders in Southeast Asia. From white sand beaches to breathtaking mountains, here are five beautiful destinations worth discovering.</p>
     </section>
-
-
-    <!-- Bucas Grande Island -->
-    <article id="bucas-grande">
-
+    <article id="Bucas Grande Island">
       <h2>Bucas Grande Island</h2>
-
       <figure>
-
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFo1NOAdyW0pV-zyas5_4nmTku6QeaKB_tgpQMbffJ5HyH1GqPJFHT1W5d&s=10"
-          alt="Bucas Grande Island">
-
-        <figcaption>
-          Famous for the labyrinthine Sohoton Cove National Park,
-          stingless jellyfish lagoons, and hidden limestone caves.
-        </figcaption>
-
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFo1NOAdyW0pV-zyas5_4nmTku6QeaKB_tgpQMbffJ5HyH1GqPJFHT1W5d&s=10" alt="Bucas Grande Island">
+        <figcaption>Famous for the labyrinthine Sohoton Cove National Park, stingless jellyfish lagoons, and hidden limestone caves.</figcaption>
       </figure>
-
-      <p>
-        This island is packed with numerous caves and white sand beaches,
-        waterfalls, mangroves, iron woods, inland lakes,
-        fishing grounds, and corals.
-      </p>
-
+      <p>This island is packed with numerous caves and white sand beaches, waterfalls, mangroves, iron woods, inland lakes, fishing grounds, and corals.</p>
     </article>
-
-
-    <!-- Underground River -->
     <article id="underground-river">
-
       <h2>Puerto Princesa Underground River</h2>
-
       <figure>
-
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf9nvmsEpOIZRwCQzGVHCp_f2a0Nw_A_9RyoDQmgpM5A&s=10"
-          alt="Puerto Princesa Underground River">
-
-        <figcaption>
-          The breathtaking limestone cave system of the
-          Puerto Princesa Subterranean River.
-        </figcaption>
-
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQf9nvmsEpOIZRwCQzGVHCp_f2a0Nw_A_9RyoDQmgpM5A&s=10" alt="Puerto Princesa Underground River">
+        <figcaption>The breathtaking limestone cave system of the Puerto Princesa Subterranean River.</figcaption>
       </figure>
-
-      <p>
-        Located in Palawan, the Puerto Princesa Subterranean River
-        National Park features a stunning limestone karst landscape
-        with a navigable underground river that flows directly into
-        the sea.
-      </p>
-
+      <p>Located in Palawan, the Puerto Princesa Subterranean River National Park features a stunning limestone karst landscape with a navigable underground river that flows directly into the sea.</p>
     </article>
-
-
-    <!-- Baguio Cathedral -->
-    <article id="baguio-cathedral">
-
+    <article id="Baguio Cathedral">
       <h2>Baguio Cathedral</h2>
-
       <figure>
-
-        <img
-          src="https://images.pexels.com/photos/20433728/pexels-photo-20433728.jpeg?cs=srgb&dl=pexels-kim-villanueva-1028870460-20433728.jpg&fm=jpg"
-          alt="Baguio Cathedral">
-
-        <figcaption>
-          Baguio Cathedral and Diocesan Shrine of Our Lady of the Atonement
-        </figcaption>
-
+        <img src="https://images.pexels.com/photos/20433728/pexels-photo-20433728.jpeg?cs=srgb&dl=pexels-kim-villanueva-1028870460-20433728.jpg&fm=jpg" alt="Baguio Cathedral">
+        <figcaption>Baguio Cathedral and Diocesan Shrine of Our Lady of the Atonement</figcaption>
       </figure>
-
-      <p>
-        The Baguio Cathedral is most famous for its distinct rose-colored
-        exterior, twin square belfries, and its history as a safe haven
-        during World War II.
-      </p>
-
+      <p>The Baguio Cathedral is most famous for its distinct rose-colored exterior, twin square belfries, and its history as a safe haven during World War II</p>
     </article>
-
-
-    <!-- Mayon Volcano -->
     <article id="mayon">
-
       <h2>Mayon Volcano</h2>
-
       <figure>
-
-        <img
-          src="https://www.sitata.com/images/uploads/blog/the-growing-restiveness-of-a-beautiful-disaster-mt-mayon-hero.webp"
-          alt="Mayon Volcano in Albay">
-
-        <figcaption>
-          Mayon Volcano, renowned for its symmetrical cone.
-        </figcaption>
-
+        <img src="https://www.sitata.com/images/uploads/blog/the-growing-restiveness-of-a-beautiful-disaster-mt-mayon-hero.webp" alt="Mayon Volcano in Albay">
+        <figcaption>Mayon Volcano, renowned for its symmetrical cone.</figcaption>
       </figure>
-
-      <p>
-        Situated in Albay, Bicol, Mayon Volcano is renowned for its
-        near-perfect symmetrical cone shape. It is an active
-        stratovolcano that dominates the landscape of the region.
-      </p>
-
+      <p>Situated in Albay, Bicol, Mayon Volcano is renowned for its near-perfect symmetrical cone shape. It is an active stratovolcano that dominates the landscape of the region.</p>
     </article>
-
-
-    <!-- Siargao -->
     <article id="siargao">
-
       <h2>Siargao</h2>
-
       <figure>
-
-        <img
-          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyE_CSO5zzK8lbhkeY-PHtLMsi5GeMGBvEJHKlmcS4Zw&s=10"
-          alt="Cloud 9 in Siargao">
-
-        <figcaption>
-          Cloud 9 in Siargao, famous for its world-class waves.
-        </figcaption>
-
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTyE_CSO5zzK8lbhkeY-PHtLMsi5GeMGBvEJHKlmcS4Zw&s=10" alt="Cloud 9 in Siargao">
+        <figcaption>Cloud 9 in Siargao, famous for its world-class waves.</figcaption>
       </figure>
-
-      <p>
-        Siargao is a teardrop-shaped island in the Philippine Sea
-        known for its world-class surf breaks such as Cloud 9.
-        It also features crystal-clear lagoons and lush coconut palm
-        forests.
-      </p>
-
+      <p>Siargao is a teardrop-shaped island in the Philippine Sea known for its world-class surf breaks such as Cloud 9. It also features crystal-clear lagoons and lush coconut palm forests.</p>
     </article>
-
   </main>
-
-
-  <!-- Footer -->
   <footer>
-
-    <p>
-      Made with &lt;3 for the Philippines IT101
-    </p>
-
-    <p>
-      Contact us: IT101@email.com
-    </p>
-
+    <p>Made with &lt;3 for the Philippines IT101</p>
+    <p>Contact us: IT101@email.com</p>
   </footer>
-
-
-  <!-- JavaScript -->
   <script>
-
-    const videoModal = document.getElementById("videoModal");
-    const promoVideo = document.getElementById("promoVideo");
-
-
-    /*
-      Start the promotional video at 0:00
-    */
-    window.addEventListener("load", function () {
-
-      promoVideo.currentTime = 0;
-
-      promoVideo.play().catch(function () {
-        console.log("Autoplay was blocked by the browser.");
-      });
-
-    });
-
-
-    /*
-      Close the video modal
-      and reset the video back to 0:00
-    */
     function closeVideoModal() {
-
-      videoModal.style.display = "none";
-
-      promoVideo.pause();
-
-      promoVideo.currentTime = 0;
-
+      const modal = document.getElementById('videoModal');
+      const video = document.getElementById('promoVideo');
+      modal.style.display = 'none';
+      video.pause();
     }
-    videoModal.addEventListener("click", function (event) {
-
-      if (event.target === videoModal) {
-
-        closeVideoModal();
-
-      }
-
-    });
-
-
-    /*
-      Press ESC to close the video.
-    */
-    document.addEventListener("keydown", function (event) {
-
-      if (event.key === "Escape") {
-
-        closeVideoModal();
-
-      }
-
-    });
-
   </script>
-
 </body>
-
 </html>
